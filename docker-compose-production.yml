@@ -1,0 +1,25 @@
+version: "3.7"
+services:
+  gateway:
+    image: ${REGISTRY}/dev-worker:${IMAGE_TAG}
+    restart: always
+    volumes:
+      - /etc/letsencrypt:/etc/letsencrypt:ro
+    ports:
+      - "80:80"
+      - "443:443"
+    depends_on:
+      - frontend
+      - api
+
+  frontend:
+    image: ${REGISTRY}/dev-worker-frontend:${IMAGE_TAG}
+    restart: always
+
+  api:
+    image: ${REGISTRY}/dev-worker-api:${IMAGE_TAG}
+    restart: always
+
+  api-php-fpm:
+    image: ${REGISTRY}/dev-worker-api-php-fpm:${IMAGE_TAG}
+    restart: always
