@@ -23,3 +23,13 @@ services:
   api-php-fpm:
     image: ${REGISTRY}/dev-worker-api-php-fpm:${IMAGE_TAG}
     restart: always
+    environment:
+      APP_ENV: prod
+      APP_DEBUG: 0
+
+  api-php-cli:
+    image: ${REGISTRY}/dev-worker-api-php-cli:${IMAGE_TAG}
+    restart: always
+    environment:
+      APP_ENV: prod
+      APP_DEBUG: 0
