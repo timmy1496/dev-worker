@@ -2,7 +2,10 @@
     "name": "timmy/deworker",
     "type": "project",
     "require-dev": {
-        "roave/security-advisories": "dev-latest"
+        "roave/security-advisories": "dev-latest",
+        "overtrue/phplint": "^2.0",
+        "squizlabs/php_codesniffer": "^3.5",
+        "vimeo/psalm": "4.x-dev"
     },
     "license": "BSD 3-Clause",
     "autoload": {
@@ -21,9 +24,14 @@
         "slim/slim": "4.x-dev",
         "slim/psr7": "dev-master",
         "php-di/php-di": "dev-master",
-        "symfony/console": "5.4.x-dev"
+        "symfony/console": "5.4.x-dev",
+        "ext-json": "*"
     },
     "scripts": {
+        "lint": "phplint",
+        "cs-check": "phpcs",
+        "cs-fix": "phpcbf",
+        "psalm": "psalm",
         "app": "php bin/app.php --ansi"
     }
 }
