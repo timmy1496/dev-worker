@@ -13,6 +13,11 @@
             "App\\": "src/"
         }
     },
+    "autoload-dev": {
+        "psr-4": {
+            "Test\\": "tests/"
+        }
+    },
     "authors": [
         {
             "name": "Dmytriy Eliseev",
@@ -25,13 +30,16 @@
         "slim/psr7": "dev-master",
         "php-di/php-di": "dev-master",
         "symfony/console": "5.4.x-dev",
-        "ext-json": "*"
+        "ext-json": "*",
+        "phpunit/phpunit": "9.5.x-dev"
     },
     "scripts": {
         "lint": "phplint",
         "cs-check": "phpcs",
         "cs-fix": "phpcbf",
         "psalm": "psalm",
+        "test": "phpunit --colors=always",
+        "test-coverage": "phpunit --colors=always --coverage-html var/coverage",
         "app": "php bin/app.php --ansi"
     }
 }
