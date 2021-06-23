@@ -31,7 +31,9 @@
         "php-di/php-di": "dev-master",
         "symfony/console": "5.4.x-dev",
         "ext-json": "*",
-        "phpunit/phpunit": "9.5.x-dev"
+        "phpunit/phpunit": "9.5.x-dev",
+        "ramsey/uuid": "4.x-dev",
+        "webmozart/assert": "1.10.x-dev"
     },
     "scripts": {
         "lint": "phplint",

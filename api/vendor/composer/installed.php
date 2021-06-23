@@ -32,6 +32,15 @@
             'reference' => '7a64a9ad336fc5e1e70b1c1fc1e9618a7027332e',
             'dev_requirement' => true,
         ),
+        'brick/math' => array(
+            'pretty_version' => '0.9.2',
+            'version' => '0.9.2.0',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../brick/math',
+            'aliases' => array(),
+            'reference' => 'dff976c2f3487d42c1db75a3b180e2b9f0e72ce0',
+            'dev_requirement' => false,
+        ),
         'composer/package-versions-deprecated' => array(
             'pretty_version' => 'dev-master',
             'version' => 'dev-master',
@@ -337,7 +346,7 @@
             'type' => 'library',
             'install_path' => __DIR__ . '/../phpunit/phpunit',
             'aliases' => array(),
-            'reference' => '4cadc6ac51fe7607468a220bea91372415fed5c8',
+            'reference' => 'fb9b8333f14e3dce976a60ef6a7e05c7c7ed8bfb',
             'dev_requirement' => false,
         ),
         'psalm/psalm' => array(
@@ -444,6 +453,33 @@
             'reference' => '120b605dfeb996808c31b6477290a714d356e822',
             'dev_requirement' => false,
         ),
+        'ramsey/collection' => array(
+            'pretty_version' => '1.1.3',
+            'version' => '1.1.3.0',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../ramsey/collection',
+            'aliases' => array(),
+            'reference' => '28a5c4ab2f5111db6a60b2b4ec84057e0f43b9c1',
+            'dev_requirement' => false,
+        ),
+        'ramsey/uuid' => array(
+            'pretty_version' => 'dev-master',
+            'version' => 'dev-master',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../ramsey/uuid',
+            'aliases' => array(
+                0 => '4.x-dev',
+            ),
+            'reference' => '90a87a75432831ec4882ddea9cf49ee9127130ef',
+            'dev_requirement' => false,
+        ),
+        'rhumsaa/uuid' => array(
+            'dev_requirement' => false,
+            'replaced' => array(
+                0 => '4.x-dev',
+                1 => 'dev-master',
+            ),
+        ),
         'roave/security-advisories' => array(
             'pretty_version' => 'dev-latest',
             'version' => 'dev-latest',
@@ -452,7 +488,7 @@
             'aliases' => array(
                 0 => '9999999-dev',
             ),
-            'reference' => 'ac3658667fbbdd16f2be6f0976b8527f5f9ddf6d',
+            'reference' => 'a197227cab82dc91450ef7f6a03eb9db33603ca6',
             'dev_requirement' => true,
         ),
         'sebastian/cli-parser' => array(
@@ -814,7 +850,7 @@
             'aliases' => array(
                 0 => '4.x-dev',
             ),
-            'reference' => 'd4311e30869250b6f4e707189ab48dc611d9a364',
+            'reference' => 'b07de1fefde4714f29bca0b56c632bd82855fc64',
             'dev_requirement' => true,
         ),
         'webmozart/assert' => array(
