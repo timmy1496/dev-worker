@@ -23,15 +23,27 @@ class User
         Id $id,
         DateTimeImmutable $date,
         Email $email,
-        string $passwordHash,
-        Token $token
+        Status $status
     ) {
         $this->id = $id;
         $this->date = $date;
         $this->email = $email;
-        $this->passwordHash = $passwordHash;
-        $this->joinConfirmToken = $token;
-        $this->status = Status::wait();
+        $this->status = $status;
+    }
+    //TODO 3.42 15lesson
+    public static function requestJoinByEmail(
+        Id $id,
+        DateTimeImmutable $date,
+        Email $email,
+        string $passwordHash,
+        Token $token,
+    ): self
+    {
+        $user = new self($id, $date, $email, Status::wait());
+        $user->passwordHash = $passwordHash;
+        $user->joinConfirmToken = $token;
+
+        return $user;
     }
 
     public function confirmJoin(string $token, DateTimeImmutable $date): void
