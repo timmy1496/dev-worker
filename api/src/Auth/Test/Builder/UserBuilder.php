@@ -11,7 +11,6 @@ use App\Auth\Entity\User\User;
 use DateTimeImmutable;
 use Ramsey\Uuid\Uuid;
 
-
 class UserBuilder
 {
     private Id $id;
@@ -46,7 +45,7 @@ class UserBuilder
 
     public function build(): User
     {
-        $user = new User(
+        $user = User::requestJoinByEmail(
             $this->id,
             $this->date,
             $this->email,

@@ -30,7 +30,7 @@ class ValidateTest extends TestCase
     public function testWrong(): void
     {
         $token = new Token(
-            $value = Uuid::uuid4()->toString(),
+            $_value = Uuid::uuid4()->toString(),
             $expires = new DateTimeImmutable()
         );
 

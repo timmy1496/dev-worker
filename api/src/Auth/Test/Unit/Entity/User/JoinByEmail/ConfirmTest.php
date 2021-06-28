@@ -1,8 +1,6 @@
 <?php
 
-
 namespace Unit\Entity\User\JoinByEmail;
-
 
 use App\Auth\Entity\User\Email;
 use App\Auth\Entity\User\Id;
