@@ -28,12 +28,16 @@
     "require": {
         "slim/slim": "4.x-dev",
         "slim/psr7": "dev-master",
+        "doctrine/orm": "*",
         "php-di/php-di": "dev-master",
         "symfony/console": "5.4.x-dev",
         "ext-json": "*",
         "phpunit/phpunit": "9.5.x-dev",
         "ramsey/uuid": "4.x-dev",
-        "webmozart/assert": "1.10.x-dev"
+        "webmozart/assert": "1.10.x-dev",
+        "symfony/cache": "5.4.x-dev",
+        "doctrine/annotations": "1.14.x-dev",
+        "laminas/laminas-config-aggregator": "1.6.x-dev"
     },
     "scripts": {
         "lint": "phplint",
