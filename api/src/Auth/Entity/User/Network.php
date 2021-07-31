@@ -6,16 +6,16 @@ namespace App\Auth\Entity\User;
 
 use Webmozart\Assert\Assert;
 
-class NetworkIdentity
+class Network
 {
     private string $network;
     private string $identity;
 
-    public function __construct(string $network, string $identity)
+    public function __construct(string $name, string $identity)
     {
-        Assert::notEmpty($network);
+        Assert::notEmpty($name);
         Assert::notEmpty($identity);
-        $this->network = mb_strtolower($network);
+        $this->network = mb_strtolower($name);
         $this->identity = mb_strtolower($identity);
     }
 
