@@ -47,5 +47,10 @@
         "test": "phpunit --colors=always",
         "test-coverage": "phpunit --colors=always --coverage-html var/coverage",
         "app": "php bin/app.php --ansi"
+    },
+    "config": {
+        "allow-plugins": {
+            "composer/package-versions-deprecated": true
+        }
     }
 }
