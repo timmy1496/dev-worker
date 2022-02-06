@@ -1,5 +1,4 @@
 version: "3.7"
-
 services:
   gateway:
     build:
@@ -8,9 +7,11 @@ services:
     ports:
       - "8080:8080"
       - "8081:8081"
+      - "8082:8082"
     depends_on:
       - frontend
       - api
+      - mailer
 
   frontend:
     build:
@@ -36,6 +37,17 @@ services:
       APP_ENV: dev
       APP_DEBUG: 1
       PHP_IDE_CONFIG: serverName=API
+      DB_HOST: api-postgres
+      DB_USER: app
+      DB_PASSWORD: secret
+      DB_NAME: app
+      MAILER_HOST: mailer
+      MAILER_PORT: 1025
+      MAILER_USER: app
+      MAILER_PASSWORD: secret
+      MAILER_ENCRYPTION: tcp
+      MAILER_FROM_EMAIL: mail@app.test
+      FRONTEND_URL: http://localhost:8080
     volumes:
       - ./api:/app
 
@@ -46,12 +58,21 @@ services:
     environment:
       APP_ENV: dev
       APP_DEBUG: 1
-      DB_URL: pgsql://app:secret@api-postgres:5432/app
+      DB_HOST: api-postgres
+      DB_USER: app
+      DB_PASSWORD: secret
+      DB_NAME: app
+      MAILER_HOST: mailer
+      MAILER_PORT: 1025
+      MAILER_USER: app
+      MAILER_PASSWORD: secret
+      MAILER_ENCRYPTION: tcp
+      FRONTEND_URL: http://localhost:8080
     volumes:
     - ./api:/app
 
   api-postgres:
-    image: postgres:12.2-alpine
+    image: postgres:13.3-alpine
     environment:
       POSTGRES_USER: app
       POSTGRES_PASSWORD: secret
@@ -61,6 +82,9 @@ services:
       - api-postgres:/var/lib/postgresql/data
     ports:
       - "54321:5432"
+
+  mailer:
+    image: mailhog/mailhog
 
 volumes:
   api-postgres:

@@ -26,7 +26,17 @@ services:
     environment:
       APP_ENV: prod
       APP_DEBUG: 0
-      DB_URL: pgsql://app:${API_DB_PASSWORD}@api-postgres:5432/app
+      DB_HOST: api-postgres
+      DB_USER: app
+      DB_PASSWORD: ${API_DB_PASSWORD}
+      DB_NAME: app
+      MAILER_HOST: ${API_MAILER_HOST}
+      MAILER_PORT: ${API_MAILER_PORT}
+      MAILER_USER: ${API_MAILER_USER}
+      MAILER_PASSWORD: ${API_MAILER_PASSWORD}
+      MAILER_ENCRYPTION: tls
+      MAILER_FROM_EMAIL: ${API_MAILER_FROM_EMAIL}
+      FRONTEND_URL: https://demo-auction.deworker.pro
 
   api-php-cli:
     image: ${REGISTRY}/dev-worker-api-php-cli:${IMAGE_TAG}
@@ -34,7 +44,16 @@ services:
     environment:
       APP_ENV: prod
       APP_DEBUG: 0
-      DB_URL: pgsql://app:${API_DB_PASSWORD}@api-postgres:5432/app
+      DB_USER: app
+      DB_PASSWORD: ${API_DB_PASSWORD}
+      DB_NAME: app
+      MAILER_HOST: ${API_MAILER_HOST}
+      MAILER_PORT: ${API_MAILER_PORT}
+      MAILER_USER: ${API_MAILER_USER}
+      MAILER_PASSWORD: ${API_MAILER_PASSWORD}
+      MAILER_ENCRYPTION: tls
+      MAILER_FROM_EMAIL: ${API_MAILER_FROM_EMAIL}
+      FRONTEND_URL: https://demo-auction.deworker.pro
 
   api-postgres:
     image: postgres:12.2-alpine
